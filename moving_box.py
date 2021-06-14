@@ -11,7 +11,7 @@ box_width = window_size/10
 # define the sensitivity of movement keys, make larger for smaller movements or larger for bigger
 move_step_size = 30
 
-# define start location for the bos
+# define start location for the box
 global grid_x
 grid_x = window_size/2
 grid_y = window_size*0.527
