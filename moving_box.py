@@ -16,7 +16,7 @@ global grid_x
 grid_x = window_size/2
 grid_y = window_size*0.527
 
-class moving_box():
+class MovingBox:
     # -------------------------------------
     # initialization functions
     # -------------------------------------
