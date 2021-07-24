@@ -11,7 +11,7 @@ box_width = window_size/10
 # define the sensitivity of movement keys, make larger for smaller movements or larger for bigger
 move_step_size = 30
 
-# define start location for the box
+# define start location for the bos
 global grid_x
 grid_x = window_size/2
 grid_y = window_size*0.527
@@ -37,10 +37,9 @@ class MovingBox:
 
     def import_images(self):
         # import the background
-        global background
-        background = Image.open('background.jpg')
-        background = background.resize((window_size + 50, window_size + 100), Image.ANTIALIAS)
-        background = ImageTk.PhotoImage(background)
+        self.background = Image.open('background.jpg')
+        self.background = self.background.resize((window_size + 50, window_size + 100), Image.ANTIALIAS)
+        self.background = ImageTk.PhotoImage(self.background)
 
     def main_loop(self):
         # trigger the main loop
@@ -59,7 +58,7 @@ class MovingBox:
         self.import_images()
 
         # create background
-        self.canvas.create_image(window_size/2, window_size/2, image=background)
+        self.canvas.create_image(window_size/2, window_size/2, image=self.background)
 
     def draw_new_box(self):
         # create_line(start_x, start_y, end_x, end_y
@@ -87,5 +86,5 @@ class MovingBox:
 
 if __name__ == '__main__':
     # start the game
-    game_instance = moving_box()
+    game_instance = MovingBox()
     game_instance.main_loop()
